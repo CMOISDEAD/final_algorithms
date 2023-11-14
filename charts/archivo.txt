@@ -1,0 +1,4 @@
+Dijkstra: 300
+BellmanFord: 200
+AStar: 100
+Warshal: 500
