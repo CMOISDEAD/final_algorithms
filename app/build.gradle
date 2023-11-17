@@ -35,7 +35,8 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'ui.App'
+    // mainClass = 'ui.App'
+    mainClass = "final_algorithms.App"
 }
 
 tasks.named('test') {

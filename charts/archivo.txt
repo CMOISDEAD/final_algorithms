@@ -1,4 +1,12 @@
-Dijkstra: 300
-BellmanFord: 200
-AStar: 100
-Warshal: 500
+BSearch: 514
+BFS: 860
+SPFA: 1021
+Maze: 1857
+Johnson: 2075
+DFS: 2307
+Yen: 2347
+BellmanFord: 2916
+DespoPape: 3045
+Dijkstra: 4015
+LandMarks: 4186
+Warshall: 34498

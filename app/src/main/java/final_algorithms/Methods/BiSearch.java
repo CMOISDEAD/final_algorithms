@@ -65,10 +65,12 @@ public class BiSearch {
     return new PathResult(path, distance[destination]);
   }
 
-  public void execute(String path, int start, int end) {
+  public long execute(String path, int start, int end) {
     Graph graph = readGraphFromFile(path);
 
+    long startTime = System.currentTimeMillis();
     PathResult shortestDistance = desopoPape(graph, start, end);
+    long endTime = System.currentTimeMillis();
 
     if (shortestDistance.distance == Integer.MAX_VALUE) {
       System.out.println("No hay un camino desde el nodo " + start +
@@ -79,6 +81,7 @@ public class BiSearch {
           " es: " + shortestDistance.distance);
       System.out.println("El camino más corto es: " + shortestDistance.path);
     }
+    return endTime - startTime;
   }
 
   public Graph readGraphFromFile(String filePath) {

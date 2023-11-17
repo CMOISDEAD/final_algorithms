@@ -1,8 +1,11 @@
 package final_algorithms;
 
 import final_algorithms.Graphs.Node;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -33,5 +36,32 @@ public class Utils {
     }
 
     return graph;
+  }
+
+  public void writeTime(String name, long time) {
+    // Definimos el nombre del archivo
+    String path = "tiempos.txt";
+
+    try {
+      // Creamos una instancia de FileWriter con el modo de agregar al final
+      // (true)
+      FileWriter fileWriter = new FileWriter(path, true);
+
+      // Creamos una instancia de BufferedWriter para escribir en el archivo
+      BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+
+      // Escribimos el nombre del algoritmo y el tiempo en el archivo
+      bufferedWriter.write(name + ": " + time);
+      // Agregamos un salto de línea para la siguiente entrada
+      bufferedWriter.newLine();
+
+      // Cerramos BufferedWriter
+      bufferedWriter.close();
+
+      System.out.println("Se ha escrito el tiempo en el archivo.");
+    } catch (IOException e) {
+      // Manejamos posibles excepciones de IO
+      e.printStackTrace();
+    }
   }
 }
